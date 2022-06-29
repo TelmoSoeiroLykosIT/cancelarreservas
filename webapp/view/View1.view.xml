@@ -1,0 +1,50 @@
+<mvc:View
+    controllerName="formacao.demo.cancelarreservas.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:t="sap.ui.table"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+>
+    <Shell id="shell" appWidthLimited="false">
+        <App id="app">
+            
+
+            <f:DynamicPage>
+                <f:header>
+                    <f:DynamicPageHeader>
+                        <!--aqui colocar os filtros...-->
+                        <smartFilterBar:SmartFilterBar id="smartFilterBarTop" persistencyKey="UniqueAndStablePersistencyKey"
+                            considerSelectionVariants="true" entitySet="Zform_SCustomer">
+                        </smartFilterBar:SmartFilterBar>
+                    </f:DynamicPageHeader>
+                </f:header>
+
+                <f:content>
+                    <!--aqui colocar a tabela...-->
+                    <smartTable:SmartTable id="smartTable" entitySet="Zform_SCustomer" smartFilterId="smartFilterBarTop" tableType="Table"
+                        useExportToExcel="true" useVariantManagement="true" useTablePersonalisation="true"
+                        header="Line Items" showRowCount="true">
+
+                            <t:Table rowSelectionChange="onRowSelectionChange">
+
+                            </t:Table>
+
+                        <smartTable:customToolbar>
+                            <OverflowToolbar id="idOverFlowToolbar">
+                                <ToolbarSpacer/>
+                                <Button text="{i18n>btProcessar}" type="Transparent" press="onCancelBooking" enabled="{viewModel>/availableCancel}"/>    
+                                <Button text="{i18n>btFrament}" type="Transparent" press="onPressOpenFragment" />    
+                            </OverflowToolbar>
+                        </smartTable:customToolbar>
+
+                    </smartTable:SmartTable>
+                </f:content>
+            </f:DynamicPage>
+
+
+        </App>
+    </Shell>
+</mvc:View>

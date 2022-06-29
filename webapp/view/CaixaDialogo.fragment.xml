@@ -1,0 +1,38 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+
+  <Dialog id= "idDialog"
+        contentHeight=""
+        contentWidth=""
+        draggable="false"
+        escapeHandler=""
+        horizontalScrolling="true"
+        icon=""
+        resizable="false"
+        showHeader="true"
+        state="None"
+        stretch="false"
+        title="Eu sou um dialog"
+        type="Standard"
+        verticalScrolling="true"
+    >
+        <beginButton>
+            
+        </beginButton>
+        <buttons>
+        </buttons>
+        <content>
+        </content>
+        <customHeader>
+        </customHeader>
+        <endButton>
+            <Button text="Fechar" press="onDialogClose" />
+                
+        </endButton>
+        <subHeader>
+        </subHeader>
+    </Dialog>
+  
+</c:FragmentDefinition>
